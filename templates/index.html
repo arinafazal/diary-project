@@ -24,7 +24,7 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-    <title>practice01</title>
+    <title>practice 01</title>
 
     <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
 
@@ -47,20 +47,23 @@
                         let title = articles[i]["title"];
                         let content = articles[i]["content"];
                         let file = articles[i]['file'];
+
+                        let time = articles[i]['time'];
+
                         let profile = articles[i]['profile'];
                         let temp_html = `
-        <div class="col-4">
-          <div class="card">
-            <img src="../${file}"class="card-img-top" alt="...">
-            <div class="card-body">
-                <img src="../${profile}"width="60" height="60" style="border-radius: 100%;"/>
-                <h5 class="card-title">${title}</h5>
-                <p class="card-text">${content}</p>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtile</h6>
-            </div>
-          </div>    
-        </div>
-                `;
+                        <div class="col-4">
+                        <div class="card">
+                            <img src="../${file}"class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <img src="../${profile}"width="60" height="60" style="border-radius: 100%;"/>
+                                <h5 class="card-title">${title}</h5>
+                                <p class="card-text">${content}</p>
+                                <h6 class="card-subtitle mb-2 text-muted">${time}</h6>
+                            </div>
+                        </div>    
+                        </div>
+                                `;
                 $("#cards-box").append(temp_html);
                     }
                 },
